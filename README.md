@@ -42,11 +42,13 @@ git clone https://github.com/TU-USUARIO/NOMBRE-REPO.git
 **Crea un archivo .env en la raíz del proyecto con las siguientes variables:**
 
 PORT=5000
-JWT_SECRET=tu_secreto
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=tu_password
-DB_NAME=tu_base_de_datos
+
+DB_HOST=mysql-51e24f5-domainbasketballassociation-b0b4.h.aivencloud.com
+DB_PORT=15700
+DB_USER=avnadmin
+DB_PASSWORD=AVNS_fiMcpCFdYT6tHJAUk4f
+DB_NAME=defaultdb
+JWT_SECRET=secret
 Base de datos
 
 Asegúrate de tener MySQL instalado y crear la base de datos antes de ejecutar el proyecto.
