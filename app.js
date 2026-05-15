@@ -134,6 +134,42 @@ app.get('/teams', (req, res) => {
   });
 });
 
+app.post('/teams', (req, res) => {
+  const { nombre, ciudad } = req.body;
+
+  const query = "INSERT INTO equipos (nombre, ciudad) VALUES (?, ?)";
+
+  db.query(query, [nombre, ciudad], (err, result) => {
+    if (err) return res.status(500).json(err);
+    res.json({ message: "Equipo creado" });
+  });
+});
+
+app.put('/teams/:id', (req, res) => {
+  const { id } = req.params;
+  const { nombre, ciudad } = req.body;
+
+  const query = `
+    UPDATE equipos 
+    SET nombre = ?, ciudad = ?
+    WHERE id = ?
+  `;
+
+  db.query(query, [nombre, ciudad, id], (err, result) => {
+    if (err) return res.status(500).json(err);
+    res.json({ message: "Equipo actualizado" });
+  });
+});
+
+app.delete('/teams/:id', (req, res) => {
+  const { id } = req.params;
+
+  db.query("DELETE FROM equipos WHERE id = ?", [id], (err) => {
+    if (err) return res.status(500).json(err);
+    res.json({ message: "Equipo eliminado" });
+  });
+});
+
 // PLAYERS
 app.get('/players', (req, res) => {
   db.query('SELECT * FROM jugadores', (err, results) => {
