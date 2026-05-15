@@ -1,0 +1,26 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-card {
+  width: 420px;
+  border-radius: 15px;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+.table {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.nav-tabs .nav-link {
+  font-weight: 600;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #0d6efd;
+  color: white;
+}
